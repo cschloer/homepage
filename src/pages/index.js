@@ -1,29 +1,40 @@
 import React, { Component } from "react"
 import { Link } from "gatsby"
 import 'bootstrap/dist/css/bootstrap.min.css'
+import Avatar from 'react-avatar';
+import {
+    Container, Row, Col,
+    Jumbotron,
+    Button,
+    ListGroup, ListGroupItem,
+} from 'reactstrap';
+import { Section } from 'react-scroll-section';
 
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
-import {
-    Collapse,
-    Navbar,
-    NavbarToggler,
-    NavbarBrand,
-    Nav,
-    NavItem,
-    NavLink,
-    Container,
-    Row,
-    Col,
-    Jumbotron,
-    Button
-} from 'reactstrap';
 
 class App extends Component {
 
+  componentDidMount() {
+    this.updateWindowDimensions();
+    window.addEventListener('resize', this.updateWindowDimensions);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateWindowDimensions);
+  }
+
+  updateWindowDimensions = () => {
+    this.setState( { viewport: { width: window.innerWidth, height: window.innerHeight } });
+  }
+
   state = {
     isOpen: false,
+    viewport: {
+      width: 0,
+      height: 0,
+    },
   };
 
   toggle = () => {
@@ -33,30 +44,79 @@ class App extends Component {
   }
 
   render() {
+    const { viewport } = this.state;
     return (
       <Layout>
         <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-        <Jumbotron>
-          <Container>
+        
+        <Section
+          id="home"
+          style={{
+            width: viewport.width,
+            height: viewport.height,
+            backgroundColor: 'blue',
+          }}
+        >
+          <Jumbotron>
+            <Container>
               <Row>
-                  <Col>
-                      <h1>Welcome to React</h1>
-                      <p>
-                          <Button
-                              tag="a"
-                              color="success"
-                              size="large"
-                              href="http://reactstrap.github.io"
-                              target="_blank"
-                          >
-                              View Reactstrap Docs
-                          </Button>
-                      </p>
-                  </Col>
+                <Col>
+                  <h1>conrad schloer</h1>
+                  <Row>
+                    <img
+                      src="/static/profilepic.jpg"
+                      style={{
+                        width: 150,
+                        height: 150,
+                        borderRadius: 150 / 2,
+                        overflow: "hidden",
+                        borderWidth: 3,
+                        borderColor: "red"
+                      }}
+                    />
+                    {' '}{' '}
+                    <h2 className="my-auto pl-3">freelance software developer</h2>
+                  </Row>
+                </Col>
               </Row>
+            </Container>
+          </Jumbotron>
+        </Section>
+        <Section
+          id="about me"
+          style={{
+            width: viewport.width,
+            height: viewport.height,
+            backgroundColor: 'green',
+          }}>
+          <Container>
+            <Row>
+              <Col>
+                <h1>about me</h1>
+                <p>I am a dveloper dapiubs ac facaikuslt morbi leo risus</p>
+
+              </Col>
+            </Row>
           </Container>
-        </Jumbotron>
-        <Link to="/page-2/">Go to page 2</Link>
+        </Section>
+        <Section
+          id="skills"
+          style={{
+            width: viewport.width,
+            height: viewport.height,
+            backgroundColor: 'pink',
+          }}
+        >
+          <Container>
+            <Row>
+              <Col>
+                <h1>skills</h1>
+                <p>- javascript</p>
+
+              </Col>
+            </Row>
+          </Container>
+        </Section>
       </Layout>
     );
   }

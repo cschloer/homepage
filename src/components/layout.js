@@ -1,10 +1,12 @@
 import React, { Component } from "react"
-import 'bootstrap/dist/css/bootstrap.min.css'
 import PropTypes from "prop-types"
 import { Link, StaticQuery, graphql } from "gatsby"
+import { ScrollingProvider } from 'react-scroll-section';
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 import Header from './header';
 
+// todo https://react-scroll-section.netlify.com/docs-getting-started
 
 class Layout extends Component {
 
@@ -32,10 +34,12 @@ class Layout extends Component {
         `}
         render={data => (
           <>
-            <Header />
-            <div>
-              <main>{this.props.children}</main>
-            </div>
+            <ScrollingProvider>
+              <Header />
+              <div>
+                <main>{this.props.children}</main>
+              </div>
+            </ScrollingProvider>
           </>
         )}
       />

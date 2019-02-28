@@ -10,6 +10,15 @@ import {
     NavItem,
     NavLink,
 } from 'reactstrap';
+import { SectionLink } from 'react-scroll-section';
+
+import './header.css';
+/*
+<Link
+  className="nav-link"
+  to="projects"
+>
+*/
 
 class Header extends Component {
 
@@ -23,29 +32,48 @@ class Header extends Component {
     });
   }
 
+  renderSectionLink = (section) => {
+    return (
+      <SectionLink section={section}>
+        {({ onClick, isSelected}) => (
+          <NavItem className={isSelected ? "active" : null}>
+            <a
+              className="nav-link"
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                onClick();
+              }}
+              style={{ cursor: 'pointer' }}
+            >
+              {section}
+            </a>
+          </NavItem>
+        )}
+      </SectionLink>
+    );
+
+  }
+
   render() {
     return (
-      <Navbar color="inverse" light expand="md">
-        <Link className="navbar-brand" to="/">conrad schloer</Link>
+      <Navbar
+        color="inverse"
+        light
+        expand="md"
+        className="navbarMedia"
+        style={{right: 0, position: 'fixed', backgroundColor: 'white' }}
+      >
         <NavbarToggler onClick={this.toggle} />
         <Collapse isOpen={this.state.isOpen} navbar>
-          <Nav className="ml-auto" navbar>
-            <NavItem>
-              <Link
-                className="nav-link"
-                to="projects"
-              >
-                projects
-              </Link>
-            </NavItem>
-            <NavItem>
-              <Link
-                className="nav-link"
-                to="contact"
-              >
-                contact
-              </Link>
-            </NavItem>
+          <Nav
+            className="ml-auto"
+            navbar
+            style={{ flexDirection: 'column' }}
+          >
+            {this.renderSectionLink('home')}
+            {this.renderSectionLink('about me')}
+            {this.renderSectionLink('skills')}
           </Nav>
         </Collapse>
       </Navbar>
