@@ -8,6 +8,7 @@ import { Section } from 'react-scroll-section';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
+import AboutMe from './aboutme';
 
 class App extends Component {
 
@@ -41,10 +42,14 @@ class App extends Component {
           style={{
             width: viewport.width,
             height: viewport.height,
-            backgroundColor: 'blue',
           }}
         >
-          <Jumbotron>
+          <Jumbotron
+            style={{
+              borderBottomRightRadius: '30px',
+              borderBottomLeftRadius: '30px',
+            }}
+          >
             <Container>
               <Row>
                 <Col>
@@ -74,29 +79,21 @@ class App extends Component {
           id="about me"
           style={{
             width: viewport.width,
-            height: viewport.height,
-            backgroundColor: 'green',
+            minHeight: viewport.height,
+            borderTop: '1px solid grey',
           }}
         >
-          <Container>
-            <Row>
-              <Col>
-                <h1>about me</h1>
-                <p>I am a dveloper dapiubs ac facaikuslt morbi leo risus</p>
-
-              </Col>
-            </Row>
-          </Container>
+          <AboutMe />
         </Section>
         <Section
           id="skills"
           style={{
             width: viewport.width,
-            height: viewport.height,
-            backgroundColor: 'pink',
+            minHeight: viewport.height,
+            borderTop: '1px solid grey',
           }}
         >
-          <Container>
+          <Container className="p-5">
             <Row>
               <Col>
                 <h1>skills</h1>

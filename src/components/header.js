@@ -61,7 +61,14 @@ class Header extends Component {
         light
         expand="md"
         className="navbarMedia"
-        style={{ right: 0, position: 'fixed', backgroundColor: 'white' }}
+        style={{
+          right: 0,
+          position: 'fixed',
+          backgroundColor: 'white',
+          zIndex: 1000,
+          opacity: 0.9,
+          borderBottomLeftRadius: '30px',
+        }}
       >
         <NavbarToggler onClick={this.toggle} />
         <Collapse isOpen={this.state.isOpen} navbar>
