@@ -1,20 +1,22 @@
-import React, { Component } from "react"
-import { Link } from "gatsby"
-import 'bootstrap/dist/css/bootstrap.min.css'
-import Avatar from 'react-avatar';
+import React, { Component } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import {
-    Container, Row, Col,
-    Jumbotron,
-    Button,
-    ListGroup, ListGroupItem,
+  Container, Row, Col,
+  Jumbotron,
 } from 'reactstrap';
 import { Section } from 'react-scroll-section';
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import Layout from '../components/layout';
+import SEO from '../components/seo';
 
 class App extends Component {
+
+  state = {
+    viewport: {
+      width: 0,
+      height: 0,
+    },
+  };
 
   componentDidMount() {
     this.updateWindowDimensions();
@@ -26,29 +28,14 @@ class App extends Component {
   }
 
   updateWindowDimensions = () => {
-    this.setState( { viewport: { width: window.innerWidth, height: window.innerHeight } });
-  }
-
-  state = {
-    isOpen: false,
-    viewport: {
-      width: 0,
-      height: 0,
-    },
-  };
-
-  toggle = () => {
-    this.setState({
-      isOpen: !this.state.isOpen,
-    });
+    this.setState({ viewport: { width: window.innerWidth, height: window.innerHeight } });
   }
 
   render() {
     const { viewport } = this.state;
     return (
       <Layout>
-        <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-        
+        <SEO title="conrad schloer" keywords={['conrad', 'schloer']} />
         <Section
           id="home"
           style={{
@@ -65,13 +52,14 @@ class App extends Component {
                   <Row>
                     <img
                       src="/static/profilepic.jpg"
+                      alt="headshot"
                       style={{
                         width: 150,
                         height: 150,
                         borderRadius: 150 / 2,
-                        overflow: "hidden",
+                        overflow: 'hidden',
                         borderWidth: 3,
-                        borderColor: "red"
+                        borderColor: 'red',
                       }}
                     />
                     {' '}{' '}
@@ -88,7 +76,8 @@ class App extends Component {
             width: viewport.width,
             height: viewport.height,
             backgroundColor: 'green',
-          }}>
+          }}
+        >
           <Container>
             <Row>
               <Col>

@@ -1,14 +1,10 @@
-import React, { Component } from "react"
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
+import React, { Component } from 'react';
 import {
-    Collapse,
-    Navbar,
-    NavbarToggler,
-    NavbarBrand,
-    Nav,
-    NavItem,
-    NavLink,
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  Nav,
+  NavItem,
 } from 'reactstrap';
 import { SectionLink } from 'react-scroll-section';
 
@@ -27,16 +23,18 @@ class Header extends Component {
   };
 
   toggle = () => {
+    const { isOpen } = this.state;
     this.setState({
-      isOpen: !this.state.isOpen,
+      isOpen: !isOpen,
     });
   }
 
   renderSectionLink = (section) => {
+    /* eslint-disable jsx-a11y/anchor-is-valid */
     return (
       <SectionLink section={section}>
-        {({ onClick, isSelected}) => (
-          <NavItem className={isSelected ? "active" : null}>
+        {({ onClick, isSelected }) => (
+          <NavItem className={isSelected ? 'active' : null}>
             <a
               className="nav-link"
               href="#"
@@ -52,6 +50,7 @@ class Header extends Component {
         )}
       </SectionLink>
     );
+    /* eslint-enable jsx-a11y/anchor-is-valid */
 
   }
 
@@ -62,7 +61,7 @@ class Header extends Component {
         light
         expand="md"
         className="navbarMedia"
-        style={{right: 0, position: 'fixed', backgroundColor: 'white' }}
+        style={{ right: 0, position: 'fixed', backgroundColor: 'white' }}
       >
         <NavbarToggler onClick={this.toggle} />
         <Collapse isOpen={this.state.isOpen} navbar>
