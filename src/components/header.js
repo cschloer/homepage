@@ -68,6 +68,8 @@ class Header extends Component {
           zIndex: 1000,
           opacity: 0.9,
           borderBottomLeftRadius: '30px',
+          borderLeft: '1px solid grey',
+          borderBottom: '1px solid grey',
         }}
       >
         <NavbarToggler onClick={this.toggle} />

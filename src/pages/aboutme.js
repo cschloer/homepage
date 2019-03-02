@@ -54,15 +54,15 @@ class AboutMe extends Component {
         </Row>
         <Row>
           <Col>
-            <h3>proficient</h3>
+            <h3 style={{ textShadow: '-1px 0 #ddfdff, 0 1px #ddfdff, 1px 0 #ddfdff, 0 -1px #ddfdff' }}>proficient</h3>
             {this.renderList(proficient)}
           </Col>
           <Col>
-            <h3>experienced</h3>
+            <h3 style={{ textShadow: '-1px 0 #ddfdff, 0 1px #ddfdff, 1px 0 #ddfdff, 0 -1px #ddfdff' }}>experienced</h3>
             {this.renderList(experienced)}
           </Col>
           <Col>
-            <h3>some experience</h3>
+            <h3 style={{ textShadow: '-1px 0 #ddfdff, 0 1px #ddfdff, 1px 0 #ddfdff, 0 -1px #ddfdff' }}>some experience</h3>
             {this.renderList(someexperience)}
           </Col>
         </Row>

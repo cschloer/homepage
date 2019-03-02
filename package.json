@@ -23,14 +23,15 @@
     "smart-sections": "^0.0.6"
   },
   "devDependencies": {
-    "prettier": "^1.16.4",
     "babel-eslint": "^10.0.1",
     "babel-preset-expo": "^5.0.0",
     "eslint": "^5.8.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
-    "eslint-plugin-react": "^7.11.1"
+    "eslint-plugin-react": "^7.11.1",
+    "gh-pages": "^2.0.1",
+    "prettier": "^1.16.4"
   },
   "keywords": [
     "gatsby"
@@ -42,7 +43,8 @@
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
+    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
+    "deploy": "gatsby build && gh-pages -d public -b master"
   },
   "repository": {
     "type": "git",
