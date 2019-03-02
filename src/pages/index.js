@@ -5,6 +5,7 @@ import {
   Jumbotron,
 } from 'reactstrap';
 import { Section } from 'react-scroll-section';
+import headshot from './headshot.jpg';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -56,15 +57,13 @@ class App extends Component {
                   <h1>conrad schloer</h1>
                   <Row>
                     <img
-                      src="/static/profilepic.jpg"
+                      src={headshot}
                       alt="headshot"
                       style={{
                         width: 150,
                         height: 150,
                         borderRadius: 150 / 2,
                         overflow: 'hidden',
-                        borderWidth: 3,
-                        borderColor: 'red',
                       }}
                     />
                     {' '}{' '}
