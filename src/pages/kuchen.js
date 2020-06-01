@@ -8,6 +8,7 @@ import virus from './virus.jpeg';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
+import RecipeImages from '../components/recipeImages';
 import AboutMe from './aboutme';
 import '../styles.css';
 import { recipes } from './recipes';
@@ -47,7 +48,7 @@ class Kuchen extends Component {
     });
   };
 
-  renderRecipe = (name, title, image, ingredients, directions) => {
+  renderRecipe = (name, title, images, ingredients, directions) => {
     const { viewport } = this.state;
     return (
       <Section
@@ -58,25 +59,49 @@ class Kuchen extends Component {
           borderTop: '1px solid grey',
         }}
       >
-        <div style={{ display: 'flex', flexAlign: 'row' }}>
-          <img
-            src={image}
-            className="p-2"
-            alt="recipe-image"
-            style={{
-              height: viewport.height / 2,
-              overflow: 'hidden',
-            }}
-            resizeMode="contain"
-          />
-          <div className="ingredients">
-            <h1>Ingredients!</h1>
-            {ingredients.map(ing => (
-              <p>{`- ${ing}`}</p>
-            ))}
+        <h1>{title}</h1>
+        <div style={{ display: 'flex', flexDirection: 'row' }}>
+          <div style={{ flex: 6 }}>
+            <img
+              src={images[0]}
+              className="p-2"
+              alt="recipe-image"
+              style={{
+                height: viewport.height * 0.9,
+                overflow: 'hidden',
+              }}
+              resizeMode="contain"
+            />
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column' }}>
+            <div style={{ display: 'flex', flexDirection: 'row' }}>
+              <div className="ingredients">
+                <h2>Ingredients!</h2>
+                <ul>
+                  {ingredients.map(ing => (
+                    <li>{ing}</li>
+                  ))}
+                </ul>
+              </div>
+              {images.length > 1 && (
+                <div
+                  className="other-pictures"
+                  style={{ height: viewport.height * 0.25 }}
+                >
+                  <RecipeImages images={images.slice(1)} viewport={viewport} />
+                </div>
+              )}
+            </div>
+            <div className="directions">
+              <h2>Directions😋😋😋</h2>
+              <ul>
+                {directions.map(d => (
+                  <li>{d}</li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
-        testing
       </Section>
     );
   };
@@ -137,62 +162,49 @@ class Kuchen extends Component {
               </Row>
             </Container>
           </Jumbotron>
-          <h2 className="pl-2">
-            Today, June 9 2020,{' '}
-            <span style={{ fontSize: '3rem' }}>9 days after May 31 2020</span>,{' '}
-            you, <span style={{ fontSize: '4rem' }}>Xaver Kandler</span>, enter
-            your 26th year of life. It is with great love and happiness that we
-            present to you{' '}
-            <span style={{ fontSize: '3rem', fontWeight: 'bold' }}>PART 2</span>{' '}
-            of Cooking With{' '}
-            <span style={{ fontSize: '5rem', color: 'blue' }}>K</span>
-            <span style={{ fontSize: '5rem', color: 'green' }}>U</span>
-            <span style={{ fontSize: '5rem', color: 'pink' }}>C</span>
-            <span style={{ fontSize: '5rem', color: 'red' }}>H</span>
-            <span style={{ fontSize: '5rem', color: 'orange' }}>E</span>
-            <span style={{ fontSize: '5rem', color: 'purple' }}>N</span>
-          </h2>
-          <br />
-          <h1
-            style={{
-              fontSize: '5rem',
-              color: 'pink',
-              textAlign: 'center',
-              width: '100%',
-            }}
-          >
-            COOKING WITH CORONA
-          </h1>
-          <h2 style={{ color: 'pink', textAlign: 'center', width: '100%' }}>
-            (featuring many months of isolation)
-          </h2>
+          <div>
+            <h2 className="pl-2">
+              Today, June 9 2020,{' '}
+              <span style={{ fontSize: '3rem' }}>9 days after May 31 2020</span>
+              , you, <span style={{ fontSize: '4rem' }}>Xaver Kandler</span>,
+              enter your 26th year of life. It is with great love and happiness
+              that we present to you{' '}
+              <span style={{ fontSize: '3rem', fontWeight: 'bold' }}>
+                PART 2
+              </span>{' '}
+              of Cooking With{' '}
+              <span style={{ fontSize: '5rem', color: 'blue' }}>K</span>
+              <span style={{ fontSize: '5rem', color: 'green' }}>U</span>
+              <span style={{ fontSize: '5rem', color: 'pink' }}>C</span>
+              <span style={{ fontSize: '5rem', color: 'red' }}>H</span>
+              <span style={{ fontSize: '5rem', color: 'orange' }}>E</span>
+              <span style={{ fontSize: '5rem', color: 'purple' }}>N</span>
+            </h2>
+            <br />
+            <h1
+              style={{
+                fontSize: '5rem',
+                color: 'pink',
+                textAlign: 'center',
+                width: '100%',
+              }}
+            >
+              COOKING WITH CORONA
+            </h1>
+            <h2 style={{ color: 'pink', textAlign: 'center', width: '100%' }}>
+              (featuring many months of isolation)
+            </h2>
+          </div>
         </Section>
         {recipes.map(r =>
           this.renderRecipe(
             r.name,
             r.title,
-            r.image,
+            r.images,
             r.ingredients,
             r.directions,
           ),
         )}
-        <Section
-          id="skills"
-          style={{
-            width: viewport.width,
-            minHeight: viewport.height,
-            borderTop: '1px solid grey',
-          }}
-        >
-          <Container className="p-5">
-            <Row>
-              <Col>
-                <h1>skills</h1>
-                <p>- javascript</p>
-              </Col>
-            </Row>
-          </Container>
-        </Section>
       </Layout>
     );
   }
