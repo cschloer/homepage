@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
-import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  Nav,
-  NavItem,
-} from 'reactstrap';
+import PropTypes from 'prop-types';
+import { Collapse, Navbar, NavbarToggler, Nav, NavItem } from 'reactstrap';
 import { SectionLink } from 'react-scroll-section';
 
 import './header.css';
@@ -17,7 +12,6 @@ import './header.css';
 */
 
 class Header extends Component {
-
   state = {
     isOpen: false,
   };
@@ -27,18 +21,18 @@ class Header extends Component {
     this.setState({
       isOpen: !isOpen,
     });
-  }
+  };
 
-  renderSectionLink = (section) => {
+  renderSectionLink = section => {
     /* eslint-disable jsx-a11y/anchor-is-valid */
     return (
-      <SectionLink section={section}>
+      <SectionLink section={section} key={section}>
         {({ onClick, isSelected }) => (
           <NavItem className={isSelected ? 'active' : null}>
             <a
               className="nav-link"
               href="#"
-              onClick={(e) => {
+              onClick={e => {
                 e.preventDefault();
                 onClick();
               }}
@@ -51,8 +45,7 @@ class Header extends Component {
       </SectionLink>
     );
     /* eslint-enable jsx-a11y/anchor-is-valid */
-
-  }
+  };
 
   render() {
     return (
@@ -74,14 +67,8 @@ class Header extends Component {
       >
         <NavbarToggler onClick={this.toggle} />
         <Collapse isOpen={this.state.isOpen} navbar>
-          <Nav
-            className="ml-auto"
-            navbar
-            style={{ flexDirection: 'column' }}
-          >
-            {this.renderSectionLink('home')}
-            {this.renderSectionLink('about me')}
-            {this.renderSectionLink('skills')}
+          <Nav className="ml-auto" navbar style={{ flexDirection: 'column' }}>
+            {this.props.sections.map(s => this.renderSectionLink(s))}
           </Nav>
         </Collapse>
       </Navbar>
@@ -90,9 +77,9 @@ class Header extends Component {
 }
 
 Header.propTypes = {
+  sections: PropTypes.array,
 };
 
-Header.defaultProps = {
-};
+Header.defaultProps = {};
 
 export default Header;

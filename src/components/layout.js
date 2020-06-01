@@ -1,13 +1,12 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { StaticQuery, graphql } from 'gatsby';
-import { ScrollingProvider } from 'react-scroll-section';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import { StaticQuery, graphql } from "gatsby";
+import { ScrollingProvider } from "react-scroll-section";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-import Header from './header';
+import Header from "./header";
 
 class Layout extends Component {
-
   render() {
     return (
       <StaticQuery
@@ -23,7 +22,7 @@ class Layout extends Component {
         render={() => (
           <>
             <ScrollingProvider>
-              <Header />
+              <Header sections={this.props.sections} />
               <div>
                 <main>{this.props.children}</main>
               </div>
@@ -35,8 +34,13 @@ class Layout extends Component {
   }
 }
 
+Layout.defaultProps = {
+  sections: ["home", "about me", "skills"]
+};
+
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  sections: PropTypes.array
 };
 
 export default Layout;
