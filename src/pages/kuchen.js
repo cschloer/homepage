@@ -3,15 +3,14 @@ import fx from 'fireworks';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col, Jumbotron } from 'reactstrap';
 import { Section } from 'react-scroll-section';
-import kuchen from './kuchen.jpeg';
-import virus from './virus.jpeg';
+import kuchen from '../images/kuchen.jpeg';
+import virus from '../images/virus.jpeg';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import RecipeImages from '../components/recipeImages';
-import AboutMe from './aboutme';
 import '../styles.css';
-import { recipes } from './recipes';
+import { recipes } from '../misc/recipes';
 
 class Kuchen extends Component {
   state = {
@@ -48,11 +47,11 @@ class Kuchen extends Component {
     });
   };
 
-  renderRecipe = (name, title, images, ingredients, directions) => {
+  renderRecipe = (title, video, images, ingredients, directions) => {
     const { viewport } = this.state;
     return (
       <Section
-        id={name}
+        id={title}
         style={{
           width: viewport.width,
           minHeight: viewport.height,
@@ -61,20 +60,34 @@ class Kuchen extends Component {
       >
         <h1>{title}</h1>
         <div style={{ display: 'flex', flexDirection: 'row' }}>
-          <div style={{ flex: 6 }}>
-            <img
-              src={images[0]}
-              className="p-2"
-              alt="recipe-image"
-              style={{
-                height: viewport.height * 0.9,
-                overflow: 'hidden',
-              }}
-              resizeMode="contain"
-            />
+          <div style={{ flex: 4 }}>
+            {video ? (
+              <div className="p-2">
+                <video
+                  height={viewport.height * 0.9}
+                  loop
+                  autoPlay
+                  controls
+                  muted
+                >
+                  <source src={video} type="video/mp4" />
+                </video>
+              </div>
+            ) : (
+              <img
+                src={images[0]}
+                className="p-2"
+                alt="recipe-image"
+                style={{
+                  height: viewport.height * 0.9,
+                  overflow: 'hidden',
+                }}
+                resizeMode="contain"
+              />
+            )}
           </div>
-          <div style={{ display: 'flex', flexDirection: 'column' }}>
-            <div style={{ display: 'flex', flexDirection: 'row' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', flex: 8 }}>
+            <div style={{ display: 'flex', flexDirection: 'row', flex: 6 }}>
               <div className="ingredients">
                 <h2>Ingredients!</h2>
                 <ul>
@@ -83,16 +96,19 @@ class Kuchen extends Component {
                   ))}
                 </ul>
               </div>
-              {images.length > 1 && (
+              {(images.length > 1 || (images.length > 0 && video)) && (
                 <div
-                  className="other-pictures"
+                  className="other-pictures pl-2"
                   style={{ height: viewport.height * 0.25 }}
                 >
-                  <RecipeImages images={images.slice(1)} viewport={viewport} />
+                  <RecipeImages
+                    images={images.slice(video ? 0 : 1)}
+                    viewport={viewport}
+                  />
                 </div>
               )}
             </div>
-            <div className="directions">
+            <div className="directions" style={{ flex: 6 }}>
               <h2>Directions😋😋😋</h2>
               <ul>
                 {directions.map(d => (
@@ -109,7 +125,7 @@ class Kuchen extends Component {
   render() {
     const { viewport } = this.state;
     return (
-      <Layout sections={['top', ...recipes.map(r => r.name)]}>
+      <Layout sections={['top', ...recipes.map(r => r.title)]}>
         <SEO title="kuchen" keywords={['xaver', 'kuchen', 'birthday']} />
         <Section
           id="top"
@@ -198,8 +214,8 @@ class Kuchen extends Component {
         </Section>
         {recipes.map(r =>
           this.renderRecipe(
-            r.name,
             r.title,
+            r.video,
             r.images,
             r.ingredients,
             r.directions,

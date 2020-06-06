@@ -1,18 +1,14 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {
-  Container, Row, Col,
-  Jumbotron,
-} from 'reactstrap';
+import { Container, Row, Col, Jumbotron } from 'reactstrap';
 import { Section } from 'react-scroll-section';
-import headshot from './headshot.jpg';
+import headshot from '../images/headshot.jpg';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import AboutMe from './aboutme';
+import AboutMe from '../old/aboutme';
 
 class App extends Component {
-
   state = {
     viewport: {
       width: 0,
@@ -30,8 +26,10 @@ class App extends Component {
   }
 
   updateWindowDimensions = () => {
-    this.setState({ viewport: { width: window.innerWidth, height: window.innerHeight } });
-  }
+    this.setState({
+      viewport: { width: window.innerWidth, height: window.innerHeight },
+    });
+  };
 
   render() {
     const { viewport } = this.state;
@@ -65,9 +63,10 @@ class App extends Component {
                         borderRadius: 150 / 2,
                         overflow: 'hidden',
                       }}
-                    />
-                    {' '}{' '}
-                    <h2 className="my-auto pl-3">freelance software developer</h2>
+                    />{' '}
+                    <h2 className="my-auto pl-3">
+                      freelance software developer
+                    </h2>
                   </Row>
                 </Col>
               </Row>
@@ -97,7 +96,6 @@ class App extends Component {
               <Col>
                 <h1>skills</h1>
                 <p>- javascript</p>
-
               </Col>
             </Row>
           </Container>

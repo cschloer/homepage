@@ -50,7 +50,12 @@ const RecipeImages = props => {
   });
 
   return (
-    <Carousel activeIndex={activeIndex} next={next} previous={previous}>
+    <Carousel
+      activeIndex={activeIndex}
+      next={next}
+      previous={previous}
+      interval={2000}
+    >
       <CarouselIndicators
         items={props.images.map(im => ({
           src: im,
