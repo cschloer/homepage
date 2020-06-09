@@ -252,8 +252,32 @@ export const recipes = [
     title: 'impostura huevos rancheros',
     images: [imposturaHuevosRancheros1, imposturaHuevosRancheros2],
     ingredients: [
+      'Several potatoes',
+      'Several sweet potatoes',
+      'Many cherry tomatoes',
+      '1-2 onions',
+      'A few cloves of garlic',
+      '4-5 eggs',
+      'Cheese of choice, one that melts well',
+      'Baked beans',
+      'Tortilla chips',
+      'Lime slices',
+      'Salsa'
     ],
     directions: [
+      'Chop potatoes and sweet potatoes to small cubes',
+      'Slice onions to medium-small slices, dice garlic',
+      'Sautee potatoes, sweet potatoes, onions, and garlic for a while with salt and pepper, as well as cumin and paprika',
+      'In the meantime heat the baked beans and using a squisher/stamper or immersion blender, make it smooth but still slightly chunky',
+      'When the sauteed veggies are looking good, add the tomatoes, all sliced in half. Probably let them sit on top first, maybe mix them further in later',
+      'When all this is looking really good, turn the heat off, make slight divets in the rocky veggie surface, and crack the eggs in',
+      'As usual, hopefully you already preheated your oven. Again in the 350-400F/180-200C range',
+      "Also you hopefully have been sauteeing in a cast iron pan or something that can go in the oven...we're now gonna put it in the oven",
+      'Take out after 5-10 minutes. Whites should definitely be set, but having the eggs be soft on the inside makes it soooo much better',
+      'Cut a thin lime slice for each person, putting it on a quaint, small serving plate',
+      "Put the tortilla chips in a bowl, salsa can stay in it's jar. Though if you home make it, that'd be even better probably",
+      'Shred cheese into a large serving bowl. No spoon, served with hands',
+      "Serve it all as you see fit. It's an imposter anyway"
     ],
   },
 ];
