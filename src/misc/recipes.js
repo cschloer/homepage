@@ -138,8 +138,30 @@ export const recipes = [
   {
     title: 'savory tart',
     images: [savorytart1, savorytart2, savorytart3],
-    ingredients: [],
-    directions: [],
+    ingredients: [
+      '1 cup flour',
+      '6 tablespoons butter',
+      '5 tablespoons ice water',
+      '1 egg',
+      'splash of milk',
+      'grated cheese to desire',
+      '1 large leek',
+      'many mushrooms',
+      'a couple white asparagus',
+      '1 onion',
+      'spices. Definitely salt, pepper, and nutmeg, maybe a few more savory spices to your taste'
+    ],
+    directions: [
+      'Put all flour and butter in chunks into food process, lightly pulse',
+      'Add ice water and further pulse until mixed but still crumbly',
+      'Spread and thin dough (make sure to put parchment paper between dough and counter!!!), rolling out to at least 1 foot diameter',
+      "Sautee all of the veggies, not too deeply as they'll go further baked",
+      'Beat egg and mix in milk and a decent bit of cheese. Spread in the middle of the dough, and raise all of the edges a couple inches in from the outside of the crust',
+      'Add all of the veggies in the middle creating a small mound. Sprinkle some more cheese on the mound',
+      'Fold the raised edges down over the outside of the mound, sprinkle the rest of the cheese over the top',
+      'Go back in time and preheat the oven to 375 F/190ish C, put the entire thing (with parchment paper!) on a baking sheet and into the oven',
+      'Keep an eye on it, take out when it looks most delicious. Should be around 40 minutes'
+    ],
   },
   {
     title: 'quiche',
@@ -150,8 +172,32 @@ export const recipes = [
   {
     title: 'pearl couscous salad',
     images: [pearlCouscousSalad],
-    ingredients: [],
-    directions: [],
+    ingredients: [
+      '2 cups Pearl Couscous',
+      '2.5-3 cups water',
+      'olive oil',
+      'red wine vinegar',
+      '1 red onion',
+      '1 white/yellow onion',
+      'a few beets',
+      'a few carrots',
+      'a bit of sweet potato',
+      'greens of choice (at least some arugula is nice',
+      'bunch of feta',
+      'bunch of walnuts',
+      'salt, pepper, oregano, little cayenne'
+    ],
+    directions: [
+      "Roast the beets, carrots, and sweet potato to your liking. Ideally mostly soft, a little crispy doesn't hurt",
+      'Put a roughly 2:1 ratio of olive oil and red wine vinegar in a bowl and add all of the onions. Do this early, soaking them for at least an hour is amazing. Also add the spices here. And maybe a splash of apple cider vinegar',
+      'Put some olive oil in a pot, heat it up, put in all of the couscous, and stir while letting it simmer a bit to brown and crispen the couscous',
+      'Add the water and cook the couscous until the water has been absorbed. Ideally still a bit al dente',
+      'Roast the walnuts in a pan then put in a little serving bowl with spoon',
+      'Crumble the feta into a little serving bowl with spoon',
+      'Mix the couscous, bunches of greens, and onions/dressing into a large bowl. Probably add a bit more spices, olive oil, and vinegar',
+      'Put the roasted veggies in a larger serving bowl with larger spoon',
+      'Serve everything. Best when served as salad, then walnuts, then roasted veggies, then feta over the top'
+    ],
   },
   {
     title: 'lavish banana pancakes',
@@ -175,13 +221,39 @@ export const recipes = [
   {
     title: 'roasted pumpkin and friends',
     images: [roastedPumpkinAndFriends],
-    ingredients: [],
-    directions: [],
+    ingredients: [
+      '1 full pumpkin, the kind where you can eat the skin',
+      'A couple beets',
+      'A couple onions, preferrably red',
+      'Some green onions',
+      'Feta cheese',
+      'Pecan nuts',
+      'Olive oil and spices',
+      'Rustic costumes'
+    ],
+    directions: [
+      'Cut the top and bottom off of the pumpkin, then cut the whole thing in half and clear out the inside. Save the seeds for another time if you want',
+      'Further cut the pumpkin to have at least as many slices as eaters. 6-8 slices probably works best',
+      'Cut onions rather in longer, thicker slices, leaving at least some of them sort of bunched together/lightly fanned',
+      'Chop beets into mid-small sized cubes',
+      'Mix olive oil and spices in a bowl. Definitely salt and pepper, perhaps a tiny bit of spiceness, then probably also nutmeg. Any other savory spices are welcome',
+      'Rub oil mixture lightly on pumpkin slices, then place the slices evenly spaced on a baking sheet',
+      'Toss the beet cubes a bit in the oil mixture, then spread around the pumpkin slices',
+      'Put this in the oven at around 400 F/200 C',
+      'Around 5-10 minutes later, add the onions after tossing them a bit in the mixture. Also pour the rest of the mixture over all the veggies in the baking sheet',
+      'When things are looking close to ready, about 5 minutes away, add the pecan nuts to the baking sheet, stir everything around a bit, and put back in the oven for 10 minutes to get a light brown/blackening on pumpkins, beets, and onions',
+      'Put the feta cheese crumbled in a serving bowl with small spoon',
+      'Chop the green onions into small ringlets and put on a serving plate with small spoon',
+      'Bring everything to the table as is to serve! Maybe add some grains like normal couscous on the side',
+      'Put on your customes and enjoy'
+    ],
   },
   {
     title: 'impostura huevos rancheros',
     images: [imposturaHuevosRancheros1, imposturaHuevosRancheros2],
-    ingredients: [],
-    directions: [],
+    ingredients: [
+    ],
+    directions: [
+    ],
   },
 ];
