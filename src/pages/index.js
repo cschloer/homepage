@@ -33,7 +33,7 @@ class App extends Component {
   render() {
     let choice = null;
     if (typeof localStorage !== 'undefined') {
-      const choice = localStorage.getItem('choice');
+      choice = localStorage.getItem('choice');
     }
     const { viewport } = this.state;
     return (
