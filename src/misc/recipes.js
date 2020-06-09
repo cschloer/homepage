@@ -166,8 +166,32 @@ export const recipes = [
   {
     title: 'quiche',
     images: [quiche],
-    ingredients: [],
-    directions: [],
+    ingredients: [
+      'flour',
+      'water',
+      'two eggs',
+      'a lot of butter',
+      'salt',
+      'mushroom',
+      'leek',
+      'onion',
+      'garlic',
+      'creme fraiche',
+      'lemon juice',
+    ],
+    directions: [
+      'a rike special',
+      'mix flour, salt, butter together',
+      'add ~two tablespoons of water and 1 egg yolk',
+      'kneed dough',
+      'let it sit',
+      'sautee onion, garlic, leek, mushroom',
+      'mix the egg white into the other egg',
+      'add feta, egg mixture, and creme fraiche into the sautee',
+      'add this whole mixture to the pie',
+      'shred parmesan onto the top',
+      'bake in the oven! 180c for 40 minutes',
+    ],
   },
   {
     title: 'pearl couscous salad',
@@ -225,8 +249,11 @@ export const recipes = [
   {
     title: 'spargel',
     images: [spargel1, spargel2],
-    ingredients: [],
-    directions: [],
+    ingredients: ['sweet sweet spargel from schrobenhausen'],
+    directions: [
+      "cook it the way oma taught you', 'the way we did it was actually really gross - I can't recommend",
+      "we didn't peel it",
+    ],
   },
   {
     title: 'roasted pumpkin and friends',
