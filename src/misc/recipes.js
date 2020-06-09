@@ -12,6 +12,17 @@ import baarlauch1 from '../images/baarlauch/baarlauch1.jpg';
 import savorytart1 from '../images/savorytart/savorytart1.jpg';
 import savorytart2 from '../images/savorytart/savorytart2.jpg';
 import savorytart3 from '../images/savorytart/savorytart3.jpg';
+import quiche from '../images/quiche/quiche.jpg';
+import pearlCouscousSalad from '../images/pearlCouscousSalad/pearlCouscousSalad.jpg';
+import lavishBananaEggPancakes1 from '../images/lavishBananaEggPancakes/lavishBananaEggPancakes1.jpg';
+import lavishBananaEggPancakes2 from '../images/lavishBananaEggPancakes/lavishBananaEggPancakes2.jpg';
+import lavishBananaEggPancakes3 from '../images/lavishBananaEggPancakes/lavishBananaEggPancakes3.jpg';
+import everythingVegetableSoupVid from '../images/everythingVegetableSoup/everythingVegetableSoupVid.mp4'
+import spargel1 from '../images/spargel/spargel1.jpg';
+import spargel2 from '../images/spargel/spargel2.jpg';
+import roastedPumpkinAndFriends from '../images/roastedPumpkinAndFriends/roastedPumpkinAndFriends.jpg';
+import imposturaHuevosRancheros1 from '../images/imposturaHuevosRancheros/imposturaHuevosRancheros1.jpg';
+import imposturaHuevosRancheros2 from '../images/imposturaHuevosRancheros/imposturaHuevosRancheros2.jpg';
 
 export const recipes = [
   {
@@ -127,6 +138,49 @@ export const recipes = [
   {
     title: 'savory tart',
     images: [savorytart1, savorytart2, savorytart3],
+    ingredients: [],
+    directions: [],
+  },
+  {
+    title: 'quiche',
+    images: [quiche],
+    ingredients: [],
+    directions: [],
+  },
+  {
+    title: 'pearl couscous salad',
+    images: [pearlCouscousSalad],
+    ingredients: [],
+    directions: [],
+  },
+  {
+    title: 'lavish banana pancakes',
+    images: [lavishBananaEggPancakes1, lavishBananaEggPancakes2, lavishBananaEggPancakes3],
+    ingredients: [],
+    directions: [],
+  },
+  {
+    title: 'everything vegetable soup',
+    video: everythingVegetableSoupVid,
+    images: [],
+    ingredients: [],
+    directions: [],
+  },
+  {
+    title: 'spargel',
+    images: [spargel1, spargel2],
+    ingredients: [],
+    directions: [],
+  },
+  {
+    title: 'roasted pumpkin and friends',
+    images: [roastedPumpkinAndFriends],
+    ingredients: [],
+    directions: [],
+  },
+  {
+    title: 'impostura huevos rancheros',
+    images: [imposturaHuevosRancheros1, imposturaHuevosRancheros2],
     ingredients: [],
     directions: [],
   },
