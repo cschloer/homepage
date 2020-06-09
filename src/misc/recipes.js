@@ -14,7 +14,6 @@ import savorytart2 from '../images/savorytart/savorytart2.jpg';
 import savorytart3 from '../images/savorytart/savorytart3.jpg';
 
 export const recipes = [
-  /*
   {
     title: 'afghan rice lentil',
     images: [afghanLentil],
@@ -125,7 +124,6 @@ export const recipes = [
       "Don't add too much garlic like we did",
     ],
   },
-  */
   {
     title: 'savory tart',
     images: [savorytart1, savorytart2, savorytart3],

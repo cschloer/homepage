@@ -44,6 +44,21 @@
   animation-iteration-count: infinite;
 }
 
+.gift1 {
+  padding: 3rem;
+  margin: 3rem;
+  border: solid black 1px;
+  font-size: 3rem;
+}
+
+.gift2 {
+  padding: 3rem;
+  margin: 3rem;
+  border: solid black 1px;
+}
+.blinking-fast {
+  animation: blinkingText 0.25s 10;
+}
 .blinking {
   animation: blinkingText 0.25s 10;
   font-family: futura;
@@ -70,6 +85,71 @@
   color: white;
   font-size: 45px;
   background-color: #fc030b;
+}
+
+.blinking-home1 {
+  animation: blinkingTextColor1 3s infinite;
+  font-family: futura;
+  font-style: italic;
+  margin: 0 auto;
+  font-size: 45px;
+  background-color: pink;
+  color: black;
+}
+.blinking-home2 {
+  animation: blinkingTextColor2 2s infinite;
+  font-family: futura;
+  font-style: italic;
+  margin: 0 auto;
+  font-size: 45px;
+  background-color: pink;
+  color: black;
+}
+.blinking-home3 {
+  animation: blinkingTextColor1 1s infinite;
+  font-family: futura;
+  font-style: italic;
+  margin: 0 auto;
+  font-size: 45px;
+  background-color: pink;
+  color: black;
+}
+
+@keyframes blinkingTextColor1 {
+  0% {
+    background-color: pink;
+    color: black;
+  }
+  33% {
+    background-color: black;
+    color: pink;
+  }
+  66% {
+    background-color: red;
+    color: black;
+  }
+  100% {
+    background-color: pink;
+    color: red;
+  }
+}
+@keyframes blinkingTextColor2 {
+  0% {
+    background-color: red;
+    color: black;
+  }
+  33% {
+    background-color: pink;
+    color: red;
+  }
+  66% {
+    background-color: pink;
+    color: black;
+  }
+  100% {
+    background-color: black;
+    color: pink;
+  }
 }
 
 /* Specifies the animation and transparency for the blinking text */

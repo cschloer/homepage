@@ -3,10 +3,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col, Jumbotron } from 'reactstrap';
 import { Section } from 'react-scroll-section';
 import headshot from '../images/headshot.jpg';
-
-import Layout from '../components/layout';
-import SEO from '../components/seo';
-import AboutMe from '../old/aboutme';
+import bird from '../images/bird.jpg';
+import vogel from '../images/vogel.jpeg';
 
 class App extends Component {
   state = {
@@ -14,6 +12,7 @@ class App extends Component {
       width: 0,
       height: 0,
     },
+    choice: null,
   };
 
   componentDidMount() {
@@ -32,75 +31,94 @@ class App extends Component {
   };
 
   render() {
+    const choice = localStorage.getItem('choice');
     const { viewport } = this.state;
     return (
-      <Layout>
-        <SEO title="conrad schloer" keywords={['conrad', 'schloer']} />
-        <Section
-          id="home"
-          style={{
-            width: viewport.width,
-            height: viewport.height,
-          }}
-        >
-          <Jumbotron
-            style={{
-              borderBottomRightRadius: '30px',
-              borderBottomLeftRadius: '30px',
-            }}
+      <div style={{ height: '100vh', width: '100wh' }}>
+        <div style={{ textAlign: 'center' }} className="py-4">
+          <h1 className="blinking-home1">Welcome</h1>
+        </div>
+        <div style={{ textAlign: 'center' }} className="py-4">
+          <h1 className="blinking-home2">to your gift</h1>
+        </div>
+        <div style={{ textAlign: 'center' }} className="py-4">
+          <h1 className="blinking-home3">KUCHEN</h1>
+        </div>
+
+        <div className="d-flex flex-row text-center justify-content-center pt-5">
+          <div
+            className="gift1 justify-content-center blinking-fast"
+            style={{ display: 'flex', flex: 6 }}
           >
-            <Container>
-              <Row>
-                <Col>
-                  <h1>conrad schloer</h1>
-                  <Row>
-                    <img
-                      src={headshot}
-                      alt="headshot"
-                      style={{
-                        width: 150,
-                        height: 150,
-                        borderRadius: 150 / 2,
-                        overflow: 'hidden',
+            <a href="/kuchen" target="_blank">
+              Click here to recieve your first gift
+            </a>
+          </div>
+
+          <div
+            className="gift2 justify-content-center flex-column"
+            style={{ display: 'flex', flex: 6, alignItems: 'center' }}
+          >
+            {!choice && (
+              <div>
+                <h2>Second gift! Choose wisely...</h2>
+                <div className="pt-4 d-flex flex-row justify-content-center">
+                  <div className="pr-3">
+                    <button
+                      onClick={() => {
+                        window.alert(
+                          'You have chosen VOGEL! Your gift will arrive in a few months!',
+                        );
+                        localStorage.setItem('choice', 'vogel');
+                        this.setState({ choice: 'vogel' });
                       }}
-                    />{' '}
-                    <h2 className="my-auto pl-3">
-                      freelance software developer
-                    </h2>
-                  </Row>
-                </Col>
-              </Row>
-            </Container>
-          </Jumbotron>
-        </Section>
-        <Section
-          id="about me"
-          style={{
-            width: viewport.width,
-            minHeight: viewport.height,
-            borderTop: '1px solid grey',
-          }}
-        >
-          <AboutMe />
-        </Section>
-        <Section
-          id="skills"
-          style={{
-            width: viewport.width,
-            minHeight: viewport.height,
-            borderTop: '1px solid grey',
-          }}
-        >
-          <Container className="p-5">
-            <Row>
-              <Col>
-                <h1>skills</h1>
-                <p>- javascript</p>
-              </Col>
-            </Row>
-          </Container>
-        </Section>
-      </Layout>
+                      className="btn btn-secondary pr-2"
+                    >
+                      Vogel
+                    </button>
+                  </div>
+                  <div className="pl-3">
+                    <button
+                      className="btn btn-secondary pl-2"
+                      onClick={() => {
+                        window.alert(
+                          'You have chosen BIRD! Your gift will arrive in a few days or weeks!',
+                        );
+                        localStorage.setItem('choice', 'bird');
+                        this.setState({ choice: 'bird' });
+                      }}
+                    >
+                      Bird
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
+            {choice === 'vogel' && (
+              <img
+                src={vogel}
+                className="p-2"
+                alt="vogel"
+                style={{
+                  height: '250px',
+                  width: '250px',
+                }}
+              />
+            )}
+            {choice === 'bird' && (
+              <img
+                src={bird}
+                className="p-2"
+                alt="bird"
+                style={{
+                  height: '250px',
+                  width: '250px',
+                }}
+              />
+            )}
+          </div>
+        </div>
+      </div>
     );
   }
 }
