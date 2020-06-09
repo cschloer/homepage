@@ -1,7 +1,16 @@
 import React, { Component } from 'react';
 import fx from 'fireworks';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Row, Col, Jumbotron } from 'reactstrap';
+import {
+  Container,
+  Row,
+  Col,
+  Jumbotron,
+  ButtonDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+} from 'reactstrap';
 import { Section } from 'react-scroll-section';
 import kuchen from '../images/kuchen.jpeg';
 import virus from '../images/virus.jpeg';
@@ -18,6 +27,8 @@ class Kuchen extends Component {
       width: 0,
       height: 0,
     },
+    selected: null,
+    dropdownOpen: false,
   };
 
   componentDidMount() {
@@ -28,8 +39,8 @@ class Kuchen extends Component {
         const range = n => [...new Array(n)];
         range(6 * (i + 1)).map(() =>
           fx({
-            x: Math.random(window.innerWidth) * window.innerWidth,
-            y: Math.random(window.innerWidth) * window.innerWidth,
+            x: Math.random(window.innerWidth) * window.innerWidth * 0.8,
+            y: Math.random(window.innerHeight) * window.innerHeight * 0.8,
             colors: ['#cc3333', '#4CAF50', '#81C784'],
           }),
         );
@@ -41,6 +52,11 @@ class Kuchen extends Component {
     window.removeEventListener('resize', this.updateWindowDimensions);
   }
 
+  toggle = () => {
+    const { dropdownOpen } = this.state;
+    this.setState({ dropdownOpen: !dropdownOpen });
+  };
+
   updateWindowDimensions = () => {
     this.setState({
       viewport: { width: window.innerWidth, height: window.innerHeight },
@@ -50,11 +66,9 @@ class Kuchen extends Component {
   renderRecipe = (title, video, images, ingredients, directions) => {
     const { viewport } = this.state;
     return (
-      <Section
+      <div
         id={title}
         style={{
-          width: viewport.width,
-          minHeight: viewport.height,
           borderTop: '1px solid grey',
         }}
       >
@@ -118,23 +132,22 @@ class Kuchen extends Component {
             </div>
           </div>
         </div>
-      </Section>
+      </div>
     );
   };
 
   render() {
-    const { viewport } = this.state;
-    return (
-      <Layout sections={['top', ...recipes.map(r => r.title)]}>
-        <SEO title="kuchen" keywords={['xaver', 'kuchen', 'birthday']} />
-        <Section
-          id="top"
-          style={{
-            width: viewport.width,
-            height: viewport.height,
-          }}
-        >
-          <div className="fireWorkParticle" />
+    const { selected, viewport, dropdownOpen } = this.state;
+    let content = null;
+    const recipe = recipes.reduce(
+      (acc, r) => acc || (r.title === selected && r),
+      null,
+    );
+    console.log('recipe', recipe);
+    if (!recipe) {
+      content = (
+        <div>
+          <SEO title="kuchen" keywords={['xaver', 'kuchen', 'birthday']} />
           <Jumbotron
             style={{
               borderBottomRightRadius: '30px',
@@ -211,18 +224,65 @@ class Kuchen extends Component {
               (featuring many months of isolation)
             </h2>
           </div>
-        </Section>
-        {recipes.map(r =>
-          this.renderRecipe(
-            r.title,
-            r.video,
-            r.images,
-            r.ingredients,
-            r.directions,
-          ),
-        )}
-      </Layout>
+        </div>
+      );
+    } else {
+      content = this.renderRecipe(
+        recipe.title,
+        recipe.video,
+        recipe.images,
+        recipe.ingredients,
+        recipe.directions,
+      );
+    }
+    return (
+      <div>
+        <div className="fireWorkParticle" />
+        <ButtonDropdown
+          isOpen={dropdownOpen}
+          toggle={this.toggle}
+          direction="left"
+          style={{
+            position: 'abosolute',
+            float: 'right',
+          }}
+          className="p-2"
+        >
+          <DropdownToggle
+            caret
+            style={{
+              backgroundColor: 'pink',
+              borderColor: 'pink',
+              color: 'black',
+            }}
+          >
+            {selected ? selected : 'Select a recipe!'}
+          </DropdownToggle>
+          <DropdownMenu>
+            <DropdownItem
+              active={selected === null}
+              onClick={() => this.setState({ selected: null })}
+            >
+              home
+            </DropdownItem>
+            {recipes.map(r => (
+              <DropdownItem
+                active={selected === r.title}
+                onClick={() => this.setState({ selected: r.title })}
+              >
+                {r.title}
+              </DropdownItem>
+            ))}
+          </DropdownMenu>
+        </ButtonDropdown>
+
+        {content}
+      </div>
     );
+    /*
+        {recipes.map(r =>
+        )}
+        */
   }
 }
 
