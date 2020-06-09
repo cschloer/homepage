@@ -31,7 +31,10 @@ class App extends Component {
   };
 
   render() {
-    const choice = localStorage.getItem('choice');
+    let choice = null;
+    if (typeof localStorage !== 'undefined') {
+      const choice = localStorage.getItem('choice');
+    }
     const { viewport } = this.state;
     return (
       <div style={{ height: '100vh', width: '100wh' }}>
@@ -66,10 +69,15 @@ class App extends Component {
                   <div className="pr-3">
                     <button
                       onClick={() => {
-                        window.alert(
-                          'You have chosen VOGEL! Your gift will arrive in a few months!',
-                        );
-                        localStorage.setItem('choice', 'vogel');
+                        if (
+                          typeof window !== 'undefined' &&
+                          typeof localStorage !== 'undefined'
+                        ) {
+                          window.alert(
+                            'You have chosen VOGEL! Your gift will arrive in a few months!',
+                          );
+                          localStorage.setItem('choice', 'vogel');
+                        }
                         this.setState({ choice: 'vogel' });
                       }}
                       className="btn btn-secondary pr-2"
@@ -81,10 +89,15 @@ class App extends Component {
                     <button
                       className="btn btn-secondary pl-2"
                       onClick={() => {
-                        window.alert(
-                          'You have chosen BIRD! Your gift will arrive in a few days or weeks!',
-                        );
-                        localStorage.setItem('choice', 'bird');
+                        if (
+                          typeof window !== 'undefined' &&
+                          typeof localStorage !== 'undefined'
+                        ) {
+                          window.alert(
+                            'You have chosen BIRD! Your gift will arrive in a few days or weeks!',
+                          );
+                          localStorage.setItem('choice', 'bird');
+                        }
                         this.setState({ choice: 'bird' });
                       }}
                     >
