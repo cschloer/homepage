@@ -202,8 +202,27 @@ export const recipes = [
   {
     title: 'lavish banana pancakes',
     images: [lavishBananaEggPancakes1, lavishBananaEggPancakes2, lavishBananaEggPancakes3],
-    ingredients: [],
-    directions: [],
+    ingredients: [
+      'Many bananas',
+      'Many * 2 eggs',
+      'Blender',
+      'Cinnamon',
+      'Fat, coconut oil is nice, butter is usually nicer',
+      'Spreads: maple syrup, dulce de leche, peanut butter, nutella, joghurt, skyr, samba, berry marmalade',
+      'Berries: blue, straw, rasp, black, probably more',
+      'Further fruits: apples, bananas, pears, also probably more'
+    ],
+    directions: [
+      'Peel the bananas, put them (the insides) in the blender, then add a bunch of cinnamon powder. A touch of vanilla extract as well if you feel tempted',
+      'Crack in the eggs. Make sure to add 2 times as many eggs as you added bananas. This is a perfect chance to practice 1 handed egg cracking',
+      'Blend. A bunch put not too much, definitely still want some chunky and not too many air bubbles',
+      "Heat some pans, put in the fat. Make sure they're well heated, but the first round is often a bit off anyway",
+      'Make pancakes with above created batter. They will come out quite thin, are a bit easier to make the smaller they are',
+      'The batter will generally make more than you expect, get a bunch of pans going at once and look forward to developing new strategies throughout as to timing, flipping, etc.',
+      'In the meantime have the oven on to a low temperature with a nice glass serving tray inside in which to put the finished pancakes to keep them warm',
+      'When you get to the end of the batter, put it all in the biggest pan to make a mega pancake!',
+      "Serve everything to everyone's delight"
+    ],
   },
   {
     title: 'everything vegetable soup',
