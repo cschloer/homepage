@@ -68,6 +68,7 @@ class Kuchen extends Component {
     return (
       <div
         id={title}
+        key={title}
         style={{
           borderTop: '1px solid grey',
         }}
@@ -279,10 +280,6 @@ class Kuchen extends Component {
         {content}
       </div>
     );
-    /*
-        {recipes.map(r =>
-        )}
-        */
   }
 }
 

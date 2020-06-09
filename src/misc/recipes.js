@@ -17,7 +17,7 @@ import pearlCouscousSalad from '../images/pearlCouscousSalad/pearlCouscousSalad.
 import lavishBananaEggPancakes1 from '../images/lavishBananaEggPancakes/lavishBananaEggPancakes1.jpg';
 import lavishBananaEggPancakes2 from '../images/lavishBananaEggPancakes/lavishBananaEggPancakes2.jpg';
 import lavishBananaEggPancakes3 from '../images/lavishBananaEggPancakes/lavishBananaEggPancakes3.jpg';
-import everythingVegetableSoupVid from '../images/everythingVegetableSoup/everythingVegetableSoupVid.mp4'
+import everythingVegetableSoupVid from '../images/everythingVegetableSoup/everythingVegetableSoupVid.mp4';
 import spargel1 from '../images/spargel/spargel1.jpg';
 import spargel2 from '../images/spargel/spargel2.jpg';
 import roastedPumpkinAndFriends from '../images/roastedPumpkinAndFriends/roastedPumpkinAndFriends.jpg';
@@ -149,7 +149,7 @@ export const recipes = [
       'many mushrooms',
       'a couple white asparagus',
       '1 onion',
-      'spices. Definitely salt, pepper, and nutmeg, maybe a few more savory spices to your taste'
+      'spices. Definitely salt, pepper, and nutmeg, maybe a few more savory spices to your taste',
     ],
     directions: [
       'Put all flour and butter in chunks into food process, lightly pulse',
@@ -160,7 +160,7 @@ export const recipes = [
       'Add all of the veggies in the middle creating a small mound. Sprinkle some more cheese on the mound',
       'Fold the raised edges down over the outside of the mound, sprinkle the rest of the cheese over the top',
       'Go back in time and preheat the oven to 375 F/190ish C, put the entire thing (with parchment paper!) on a baking sheet and into the oven',
-      'Keep an eye on it, take out when it looks most delicious. Should be around 40 minutes'
+      'Keep an eye on it, take out when it looks most delicious. Should be around 40 minutes',
     ],
   },
   {
@@ -185,7 +185,7 @@ export const recipes = [
       'greens of choice (at least some arugula is nice',
       'bunch of feta',
       'bunch of walnuts',
-      'salt, pepper, oregano, little cayenne'
+      'salt, pepper, oregano, little cayenne',
     ],
     directions: [
       "Roast the beets, carrots, and sweet potato to your liking. Ideally mostly soft, a little crispy doesn't hurt",
@@ -196,12 +196,16 @@ export const recipes = [
       'Crumble the feta into a little serving bowl with spoon',
       'Mix the couscous, bunches of greens, and onions/dressing into a large bowl. Probably add a bit more spices, olive oil, and vinegar',
       'Put the roasted veggies in a larger serving bowl with larger spoon',
-      'Serve everything. Best when served as salad, then walnuts, then roasted veggies, then feta over the top'
+      'Serve everything. Best when served as salad, then walnuts, then roasted veggies, then feta over the top',
     ],
   },
   {
     title: 'lavish banana pancakes',
-    images: [lavishBananaEggPancakes1, lavishBananaEggPancakes2, lavishBananaEggPancakes3],
+    images: [
+      lavishBananaEggPancakes1,
+      lavishBananaEggPancakes2,
+      lavishBananaEggPancakes3,
+    ],
     ingredients: [],
     directions: [],
   },
@@ -209,8 +213,14 @@ export const recipes = [
     title: 'everything vegetable soup',
     video: everythingVegetableSoupVid,
     images: [],
-    ingredients: [],
-    directions: [],
+    ingredients: ['everything in the fridge', 'friends'],
+    directions: [
+      'peel everything',
+      'sautee everything',
+      'add water and vegetable stock to everything',
+      'puree everything',
+      'BAM',
+    ],
   },
   {
     title: 'spargel',
@@ -229,7 +239,7 @@ export const recipes = [
       'Feta cheese',
       'Pecan nuts',
       'Olive oil and spices',
-      'Rustic costumes'
+      'Rustic costumes',
     ],
     directions: [
       'Cut the top and bottom off of the pumpkin, then cut the whole thing in half and clear out the inside. Save the seeds for another time if you want',
@@ -245,7 +255,7 @@ export const recipes = [
       'Put the feta cheese crumbled in a serving bowl with small spoon',
       'Chop the green onions into small ringlets and put on a serving plate with small spoon',
       'Bring everything to the table as is to serve! Maybe add some grains like normal couscous on the side',
-      'Put on your customes and enjoy'
+      'Put on your customes and enjoy',
     ],
   },
   {
@@ -262,7 +272,7 @@ export const recipes = [
       'Baked beans',
       'Tortilla chips',
       'Lime slices',
-      'Salsa'
+      'Salsa',
     ],
     directions: [
       'Chop potatoes and sweet potatoes to small cubes',
@@ -277,7 +287,7 @@ export const recipes = [
       'Cut a thin lime slice for each person, putting it on a quaint, small serving plate',
       "Put the tortilla chips in a bowl, salsa can stay in it's jar. Though if you home make it, that'd be even better probably",
       'Shred cheese into a large serving bowl. No spoon, served with hands',
-      "Serve it all as you see fit. It's an imposter anyway"
+      "Serve it all as you see fit. It's an imposter anyway",
     ],
   },
 ];
